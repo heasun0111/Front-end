@@ -105,7 +105,7 @@ let func = (arg1, arg2, ...argN) => expression
 하위 호환성 문제로 변경사항 대부분은 ES5의 기본 모드에선 활성화되지 않도록 설계되었습니다. 대신 use strict라는 특별한 지시자를 사용해 엄격 모드(strict mode)를 활성화했을 때만 이 변경사항이 활성화되게 해놓았습니다.
 지시자 "use strict", 혹은 'use strict'는 단순한 문자열처럼 생겼습니다. 하지만 이 지시자가 스크립트 최상단에 오면 스크립트 전체가 “모던한” 방식으로 동작합니다.
 
-**Boolean /Null /Undefined /Number /BigInt /String /Symbol** </br>
+**변수타입** </br>
 
 **Boolean**
 true와 false 둘 중 하나의 값을 갖는 논리적인 요소
