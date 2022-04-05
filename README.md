@@ -1,6 +1,8 @@
 ## Front-end
-프론트엔드 스터디 공부 내용 정리 </br> </br>
+프론트엔드 스터디 공부 내용 정리
+### [React / React Native 내용 정리](https://github.com/heasun0111/Front-end/blob/main/React.md)
 
+</br>
 
 **파스칼 표기법** : 첫 단어를 대문자로 시작하는 표기법 </br>
 ex) BackgroundColor, TypeName, PowerPoint
