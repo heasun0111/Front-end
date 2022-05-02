@@ -401,6 +401,66 @@ Promise는 다음 중 하나의 상태를 가집니다.</br>
 - 대기(pending): 이행하지도, 거부하지도 않은 초기 상태</br>
 - 이행(fulfilled): 연산이 성공적으로 완료됨</br>
 - 거부(rejected): 연산이 실패함</br>
+</br>
+
+<JavaScript 변천사>
+개발자들은 최신 버전으로 개발한 후 모든 핸드폰에서 돌아가기 위해서 5.0버전으로 변환해주는 변환기 (트랜스 파일러)를 사용한다.
+
+<웹앱의 구성요소>
+브라우저는 웹앱에게 런타임 환경을 제공하는 것
+(최근에는 nodejs등 다른 것 또한 JS를 실행시킬 수 있는 환경이 되었다.)
+
+CSR & SSR
+CSR-클라이언트 사이드 렌더링
+브라우저에서 실행되는 JS의 실행 결과로 UI를 주도적으로 만드는 방법
+(=HTML을 주도적으로 만들어서 UI를 표현하는 방법)
+
+SSR-서버 사이드 렌더링
+웹 서버가 주도적으로 HTML을 만들고 브라우저에게 전송
+
+<모던 JS와 개발 환경>
+node js – 브라우저에서 실행되는 게 아니라, 데스크탑/ 노트북에서 JS를 실행하는 어플리케이션
+번들러 – 하나의 JS코드에서 (모듈을 통해) 불러오는 다른 JS파일을 하나의 파일로 만들어 주는 일
+브라우저에서 실제로 JS파일을 불러들이기 전에 많은 JS 파일을 하나의 파일로 만들어 놓는 일
+ex) Webpack
+또한 트랜스 파일링 – 인간이 이해하는 코드를 기계가 읽고 실행시킬 수 있는 형식으로 변환
+번들러는 다른 버전의 JS들을 한 버전으로 변환시켜준다.
+ex) babel
+<TypeScript vs JavaScript>
+TypeScript
+JS의 기능 + (데이터에 대한)명시적은 유형 설명
+
+ 
+
+<nodejs & npm>
+터미널
+```
+node index.js
+```
+node를 이용해서 JS파일을 브라우저가 아닌 데스크탑에서 실행 가능
+npm홈페이지에서 필요한 패키지 검색 가능하다.
+
+<Hacker News 클라이언트 앱>
+해커뉴스 PWA 사이트에서 제공하는 REST API를 이용하여 내용을 불러올 예정
+tailwindcss 이용해서 화면 더 예쁘게 구성
+
+<12줄의 코드로 시작하기>
+터미널에서 parcel index.html로 실행
+ajax – 네트워크 너머에 있는 데이터를 가져오는 도구
+
+ajax.open('GET', 'https://api.hnpwa.com/v0/news/1.json', false);
+
+open( string, url, async: boolean )
+async: boolean 이 false면 url에서 가져오는 데이터를 동기적으로 가져온다는 뜻
+
+send함수를 호출하면 데이터를 가져온다.
+
+XHR은 XHLHttpRequest의 약자
+네트워크를 가져온 항목들만 보여주는 필터
+
+
+JSON.parse : 응답 값(JSON)을 객체로 변환
+
 
 
 
