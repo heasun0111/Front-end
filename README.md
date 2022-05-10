@@ -463,6 +463,13 @@ XHR은 XHLHttpRequest의 약자
 
 JSON.parse : 응답 값(JSON)을 객체로 변환
 
+const ul = document.createElement(‘ul’)을 통해서 태그를 만들고
+이것을 root 하위에다가 넣어줘야한다.
+document.getElementById(‘root’).appendChild(ul);
+
+li.innerHTML = newsfeed[i].title; 을 이용해서 내용을 li태그 안에 넣는다.
+
+**<두 개의 화면을 가진 웹앱>** </br>
 
 
 
