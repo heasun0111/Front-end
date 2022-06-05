@@ -471,6 +471,15 @@ li.innerHTML = newsfeed[i].title; 을 이용해서 내용을 li태그 안에 넣
 
 **<두 개의 화면을 가진 웹앱>** </br>
 
+이벤트를 이용해서 사용자가 (타이틀 등) 클릭했는지를 알 수 있다. </br>
+이벤트 시스템을 이용해서 사용자가 버튼을 누르는 시점을 파악할 수 있다. </br> </br>
+이벤트 호출 1) </br>
+a.addEventListener(‘click’, function( ) { }); </br> </br>
+이벤트 호출 2) – 해시 </br>
+```
+Window.addEventListener(‘hashchange’, function( ) {
+});
+```
 
 
 </br> </br> </br>
