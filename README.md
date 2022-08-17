@@ -481,6 +481,131 @@ Window.addEventListener(‘hashchange’, function( ) {
 });
 ```
 
+///여기
+
+# 인터페이스와 타입 별칭
+TS에서 타입을 기술하는 2가지 방법
+-인터페이스
+-타입 별칭
+
+
+#타입 별칭 예시
+```
+export type DayOfWeek = ‘월’ | ‘화’ | ‘수’ | ‘목’ | ‘금’ | ‘토’ | ‘일’;
+
+const dayOfWeek: DayOfWeek = ‘월’;
+->타입을 제한하고 싶을 때!
+
+```
+
+추가) enum과 type비교
+타입: export type DayOfWeek = ‘월’ | ‘화’ | ‘수’ | ‘목’ | ‘금’ | ‘토’ | ‘일’;
+enum: export enum DayOfTheWeek = { ‘월’ , ‘화’ , ‘수’ , ‘목’ , ‘금’ , ‘토’ , ‘일’ };
+
+type은 컴파일 타임에 값이 들어가는지 안 들어가는지, 그런 코드가 있는지 검사
+enum은 실제 데이터 (컴파일 타임이 아니라 런타임에 값이 들어간다)
+->특정 값으로 제한하는 기능은 비슷하지만 enum은 실제 데이터
+
+
+# 인터페이스
+
+```
+export interface IUser {
+    readonly id : number;
+    readonly name : Name;
+    email : string;
+    receiveInfo : Boolean;
+    active : YesOrNo;
+}
+```
+IUser 인터페이스는 객체 타입을 정의하고 있다
+
+# ?의 의미
+export interface IUser {
+    address? : string;
+}
+물음표는 선택 항목이라는 뜻
+->객체를 만드는데 address라는 속성이 있어도 되고, 없어도 된다!
+
+
+
+
+
+
+
+->interface는 선언하고나서 또 선언하면서 추가할 수 있는데
+type 알리아스는 불가능하다
+
+ex)
+export interface IUser {
+    readonly id : number;
+    readonly name : Name;
+    email : string;
+    receiveInfo : Boolean;
+    active : YesOrNo;
+}
+
+export interface IUser {
+    address? : string;
+}
+
+여러 개 인터페이스를 하나로 합칠 수 있다!! (상속과 유사)
+```
+export interface IUserProfile extends IUser {
+    profileImage : string;
+    github? : string;
+    twitter? : string;
+}
+```
+extends 로 인터페이스 확장
+
+type 알리아스는 intersection이라는 같은 기능 제공!!
+```
+export type TUserProfile = IUser & {
+profileImage : string;
+    github? : string;
+    twitter? : string;
+}
+```
+
+여러 개의 인터페이스를 합칠 수 있다!
+
+-> 이름은 문자열로 되어있고, 값은 어떤 값 유형으로 만들어져 있는 객체
+value가 오로지 숫자 유형인 객체를 표현하고 싶을 때
+export interface IOnlyNumberValueObject {
+    [ key : string ] : number;
+}
+
+함수도 규격을 만들 수 있다!
+ex) 
+- 인터페이스
+export interface IGetApi {
+    ( url : string, search? : string ) : Promise<string>;
+}
+
+( 인자 ) : 함수 리턴값;
+
+- 타입 알리아스
+export type TGetApi = {
+    ( url : string, search? : string ) : Promise<string>;
+}
+
+# 인터페이스를 이용해서 생성자의 규격 기술
+export interface IRectConstructor {
+    new ( x : number, y : number, width : number, height : number ) : IRect;
+}
+new -> 생성자
+IRect 는 타입 정의로 이용
+
+정리)
+인터페이스에는 없지만 타입 알리아스에는 있는 거
+-> 구체적인 어떤 타입 명시
+따라서 데이터를 표현할 때는 타입 알리아스를 쓰고,
+메소드, 클래스와 같은 구체적인 행위까지 포함된 객체를 디자인 할 때는 인터페이스 추천
+
+
+
+
 
 </br> </br> </br>
 **공식문서 외에 설명을 돕기 위해 개인 블로그 내용도 참고하였습니다. 혹시 저작권적인 문제가 있을시 바로 수정하겠습니다. 감사합니다!**
